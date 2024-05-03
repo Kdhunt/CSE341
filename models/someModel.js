@@ -1,4 +1,4 @@
-const killmenow = require('../database/poolofstupid');
+const killmenow = require('../database/mongodb');
 
 class ObjectModel {
     constructor() {
