@@ -5,23 +5,12 @@
     "description": "woot",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "https://cse341-0mym.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
-    "/api-docs": {
-      "get": {
-        "description": "",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
-    },
     "/professional/": {
       "get": {
         "description": "",
