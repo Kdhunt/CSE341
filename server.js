@@ -28,6 +28,7 @@ db.initDb((err, mongodb ) => {
 if (err) {
 console.log(err);
 } else {
-app.listen(3000);
+app.listen(port);
+console.log(`Server is running on port ${port}`);
 }
 });
