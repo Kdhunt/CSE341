@@ -5,6 +5,9 @@ const approute = require('./routes');
 const db = require('./database/mongodb');
 const professionalRoutes = require('./routes/professional');
 
+//const graphqlHTTP = require('express-graphql');
+//const schema = require('./database/schema')
+
 const port = process.env.PORT|| 8080;
 
 const swaggerUi = require('swagger-ui-express');
@@ -24,6 +27,13 @@ app
 })
 
 app.use('/', approute);
+// app.use('/graphql', graphqlHTTP({
+//     //directing express-graphql to use this schema to map out the graph 
+//     schema,
+//     //directing express-graphql to use graphiql when goto '/graphql' address in the browser
+//     //which provides an interface to make GraphQl queries
+//     graphiql:true
+// }));
 db.initDb((err, mongodb ) => {
 if (err) {
 console.log(err);
