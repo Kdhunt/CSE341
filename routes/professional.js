@@ -1,15 +1,15 @@
 const express = require('express');
 
 const professionalController = require('../controllers/professional');
-const validator = require('../valodation/contact-validator');
+const validator = require('../middleware/contact-validator');
+const utils = require('../utilities');
 
 const router = express.Router();
 
-
-router.get('/', professionalController.getData);
-router.get('/:id', validator.checkCreateCreateDataRules(),  professionalController.getDataById);
-router.post('/',validator.checkCreateCreateDataRules(), professionalController.createData);
-router.put('/:id', validator.checkUpdateContactValidationRules(), professionalController.updateData);
-router.delete('/:id', validator.checkCreateCreateDataRules(), professionalController.deleteData);
+router.get('/', utils.handleErrors(professionalController.getData));
+router.get('/:id', utils.handleErrors(professionalController.getDataById));
+router.post('/', validator.saveData, utils.handleErrors(professionalController.createData));
+router.put('/:id', validator.saveData, utils.handleErrors(professionalController.updateData));
+router.delete('/:id',  utils.handleErrors(professionalController.deleteData));
 
 module.exports = router;

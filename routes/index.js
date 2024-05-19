@@ -2,9 +2,9 @@ const express = require("express")
 const router = new express.Router() 
 const baseController = require('../controllers/baseController');
 const swaggerRoute = require('./swagger');
-const professionalRoute = require('./professional'); 
-
-
+const chipsRoute = require('./chips'); 
+const usersRoute = require('./users');
+const contactRoute = require('./professional');  
 
 // router.get("/", baseController.JeffRoute)
 // router.get("/leighton", baseController.LeightonRoute)
@@ -17,6 +17,9 @@ const professionalRoute = require('./professional');
 
 
 router.use('/', swaggerRoute);
-router.use('/professional', professionalRoute);
+router.use('/users', usersRoute);
+router.use('/chips', chipsRoute);
+router.use('/profession', contactRoute);
+
 
 module.exports = router;
