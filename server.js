@@ -27,13 +27,15 @@ app
 })
 
 app.use('/', approute);
-// app.use('/graphql', graphqlHTTP({
-//     //directing express-graphql to use this schema to map out the graph 
-//     schema,
-//     //directing express-graphql to use graphiql when goto '/graphql' address in the browser
-//     //which provides an interface to make GraphQl queries
-//     graphiql:true
-// }));
+// Handling Errors
+app.use((err, req, res, next) => {
+    // console.log(err);
+    err.statusCode = err.statusCode || 500;
+    err.message = err.message || "Internal Server Error";
+    res.status(err.statusCode).json({
+      message: err.message,
+    });
+});
 db.initDb((err, mongodb ) => {
 if (err) {
 console.log(err);

@@ -19,7 +19,7 @@ const contactRoute = require('./professional');
 router.use('/', swaggerRoute);
 router.use('/users', usersRoute);
 router.use('/chips', chipsRoute);
-router.use('/profession', contactRoute);
+//router.use('/profession', contactRoute);
 
 
 module.exports = router;

@@ -16,7 +16,7 @@ const getDataById =  async (req, res, next) => {
     if (result) {
       res.status(200).json(result);
     } else {
-      res.status(404).json({ message: 'Professional not found' });
+      res.status(404).json({ message: 'User not found' });
     }
   }
   catch (error) {
@@ -29,16 +29,16 @@ const createData = async (req, res, next) => {
     const user = {
       username: req.body.username,
       email:req.body.email,
-      password: req.body.hashed_password,
+      hashed_password: req.body.hashed_password,
       role: req.body.role,
       created_at: req.body.create_DateTime,
       updated_at: Date.now()
     }
     const result = await db.getDb().db().collection('users').insertOne(user);
     if(result.acknowledged){
-      res.status(200).json({ message: 'Professional inserted successfully' });
+      res.status(200).json({ message: 'User inserted successfully' });
     } else {
-      res.status(404).json({ message: 'Professional not inserted' });
+      res.status(404).json({ message: 'User not inserted' });
     }
   }
   catch (error) {
@@ -52,7 +52,7 @@ const updateData = async (req, res, next) => {
     const user = {
       username: req.body.username,
       email:req.body.email,
-      password: req.body.hashed_password,
+      hashed_password: req.body.hashed_password,
       role: req.body.role,
       created_at: req.body.create_DateTime,
       updated_at: Date.now()
@@ -62,9 +62,9 @@ const updateData = async (req, res, next) => {
       user
     );
     if(result.modifiedCount > 0){
-      res.status(200).json({ message: 'Professional updated successfully' });
+      res.status(200).json({ message: 'User updated successfully' });
     } else {
-      res.status(404).json({ message: 'Professional not found' });
+      res.status(404).json({ message: 'User not found' });
     }
   }
   catch (error) {
@@ -78,9 +78,9 @@ const deleteData = async (req, res, next) => {
     const id = new ObjectId(req.params.id);
     const result = await db.getDb().db().collection('users').deleteOne({ _id: id });
   if(result.deletedCount > 0){
-      res.status(200).json({ message: 'Professional deleted successfully' });
+      res.status(200).json({ message: 'User deleted successfully' });
     } else {
-      res.status(404).json({ message: 'Professional not found' });
+      res.status(404).json({ message: 'User not found' });
     }
   }
   catch(error){

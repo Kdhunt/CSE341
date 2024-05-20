@@ -8,9 +8,9 @@ const router = express.Router();
 
 
 router.get('/', controller.getData);
-router.get('/:id', utils.handleErrors(controller.getDataById));
-router.post('/', validator.saveData, utils.handleErrors(controller.createData));
-router.put('/:id', validator.saveData, utils.handleErrors(controller.updateData));
-router.delete('/:id', utils.handleErrors(controller.deleteData));
+router.get('/:id', controller.getDataById);
+router.post('/', validator.saveData, controller.createData);
+router.put('/:id', validator.saveData, controller.updateData);
+router.delete('/:id', controller.deleteData);
 
 module.exports = router;
