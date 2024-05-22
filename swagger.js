@@ -5,7 +5,7 @@ const doc = {
       description: 'woot',
     },
     host: 'localhost:8080',
-    schemes: ['http','https'],
+    schemes: ['https'],
   };
 
 const outputFile = './swagger.json';
