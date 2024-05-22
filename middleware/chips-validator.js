@@ -7,7 +7,7 @@ const saveData = (req, res, next) => {
       type: 'required|string',
       production_cost: 'required|number',
       reyail_price: 'required|number',
-      nutritional_value: 'required|array',
+      nutritional_value: 'required|object',
       ingredients: 'required|array',
       image: 'required|string'
     };
