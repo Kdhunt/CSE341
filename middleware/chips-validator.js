@@ -6,7 +6,7 @@ const saveData = (req, res, next) => {
       flavor: 'required|string',
       type: 'required|string',
       production_cost: 'required|numeric',
-      reyail_price: 'required|numeric',
+      retail_price: 'required|numeric',
       nutritional_value: 'required',
       ingredients: 'required|array',
       image: 'required|string'
