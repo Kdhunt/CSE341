@@ -119,7 +119,7 @@
                 "email": {
                   "example": "any"
                 },
-                "hashed_password": {
+                "password": {
                   "example": "any"
                 },
                 "role": {
@@ -194,10 +194,10 @@
                 "type": {
                   "example": "any"
                 },
-                "cost": {
+                "production_cost": {
                   "example": "any"
                 },
-                "price": {
+                "retail_price": {
                   "example": "any"
                 },
                 "nutritional_value": {
