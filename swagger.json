@@ -5,10 +5,11 @@
     "description": "woot",
     "version": "1.0.0"
   },
-  "host": "cse341-0mym.onrender.com:8080",
+  "host": "cse341-0mym.onrender.com",
   "basePath": "/",
   "schemes": [
-    "https"
+    "https",
+    "http"
   ],
   "paths": {
     "/api-docs": {
