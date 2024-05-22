@@ -4,7 +4,7 @@ const doc = {
       title: 'an api',
       description: 'woot',
     },
-    host: 'localhost:8080',
+    host: 'https://cse341-0mym.onrender.com:8080',
     schemes: ['https'],
   };
 
