@@ -29,7 +29,7 @@ const createData = async (req, res, next) => {
     const user = {
       username: req.body.username,
       email:req.body.email,
-      hashed_password: req.body.hashed_password,
+      password: req.body.hashed_password,
       role: req.body.role,
       created_at: req.body.create_DateTime,
       updated_at: Date.now()
@@ -52,7 +52,7 @@ const updateData = async (req, res, next) => {
     const user = {
       username: req.body.username,
       email:req.body.email,
-      hashed_password: req.body.hashed_password,
+      password: req.body.password,
       role: req.body.role,
       created_at: req.body.create_DateTime,
       updated_at: Date.now()

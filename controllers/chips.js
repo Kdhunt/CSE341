@@ -30,8 +30,8 @@ const createData = async (req, res, next) => {
       "brand": req.body.brand,
       "flavor": req.body.flavor,
       "type": req.body.type,
-      "production_cost": req.body.cost,
-      "retail_price": req.body.price,
+      "production_cost": req.body.production_cost,
+      "retail_price": req.body.retail_price,
       "nutritional_value": req.body.nutritional_value,
       "ingredients": req.body.ingredients,
       "image": req.body.image 

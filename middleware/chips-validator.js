@@ -5,10 +5,10 @@ const saveData = (req, res, next) => {
       brand: 'required|string',
       flavor: 'required|string',
       type: 'required|string',
-      production_cost: 'required|string',
-      retail_price: 'required|string',
-      nutritional_value: 'required|string',
-      ingredients: 'required|string',
+      production_cost: 'required|number',
+      reyail_price: 'required|number',
+      nutritional_value: 'required|array',
+      ingredients: 'required|array',
       image: 'required|string'
     };
     validator(req.body, validationRule, {}, (err, status) => {
