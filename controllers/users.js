@@ -29,9 +29,9 @@ const createData = async (req, res, next) => {
     const user = {
       username: req.body.username,
       email:req.body.email,
-      password: req.body.hashed_password,
+      password: req.body.password,
       role: req.body.role,
-      created_at: req.body.create_DateTime,
+      created_at: Date.now(),
       updated_at: Date.now()
     }
     const result = await db.getDb().db().collection('users').insertOne(user);
